@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "regions": ["kix1"],
   "builds": [
     {
       "src": "danmu_api/worker.js",
