@@ -1,11 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "danmu_api/worker.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
       "src": "/",
