@@ -1,27 +1,14 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "danmu_api/worker.js",
-      "use": "@vercel/node"
+  "functions": {
+    "danmu_api/worker.js": {
+      "runtime": "@vercel/node"
     }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/danmu_api/worker.js"
-    },
-    {
-      "src": "/api/(.*)",
-      "dest": "/danmu_api/worker.js"
-    },
-    {
-      "src": "/([^/]+)/api/(.*)",
-      "dest": "/danmu_api/worker.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/danmu_api/worker.js"
-    }
+  },
+  "rewrites": [
+    { "source": "/", "destination": "/danmu_api/worker.js" },
+    { "source": "/api/(.*)", "destination": "/danmu_api/worker.js" },
+    { "source": "/([^/]+)/api/(.*)", "destination": "/danmu_api/worker.js" },
+    { "source": "/(.*)", "destination": "/danmu_api/worker.js" }
   ]
 }
